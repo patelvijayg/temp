@@ -12,7 +12,7 @@ echo 'export SPM_MCR=/root/opt/spm12/spm12.sh' >> ~/.bashrc
 wget http://neuro.debian.net/_files/neurodebian-travis.sh
 sed -i 's/coreutils/coreutils -y/g' neurodebian-travis.sh
 
-#cd /pypreprocess && . continuous_integration/install_spm12.sh
-#source neurodebian-travis.sh -y
-#cd /pypreprocess/examples/easy_start && python3 nipype_preproc_spm_auditory.py
-#docker container commit -m "java python3"
+cd ~/pypreprocess && . continuous_integration/install_spm12.sh
+source ~/neurodebian-travis.sh -y
+python3 setup.py install
+cd ~/pypreprocess/pypreprocess/examples/easy_start && python3 nipype_preproc_spm_auditory.py
