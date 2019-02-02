@@ -9,10 +9,14 @@ git clone https://github.com/neurospin/pypreprocess.git
 sed -i 's/securuty/security/g' pypreprocess/continuous_integration/install_spm12.sh
 echo 'export SPM_DIR=/root/opt/spm12/spm12' >> ~/.bashrc
 echo 'export SPM_MCR=/root/opt/spm12/spm12.sh' >> ~/.bashrc
+echo 'export MCR_HOME=/root/opt/spm12/mcr/v713/' >> ~/.bashrc
+echo 'export SPM_HOME=/root/opt/spm12/spm12' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/root/opt/spm12/mcr/v713/runtime/glnxa64' >> ~/.bashrc
+echo 'export PATH=$PATH:$LD_LIBRARY_PATH' >> ~/.bashrc
 wget http://neuro.debian.net/_files/neurodebian-travis.sh
 sed -i 's/coreutils/coreutils -y/g' neurodebian-travis.sh
 echo "---------------copy part is done"
 cd /pypreprocess && . continuous_integration/install_spm12.sh
 source /neurodebian-travis.sh -y
 cd /pypreprocess && python3 setup.py install
-cd /pypreprocess/pypreprocess/examples/easy_start && python3 nipype_preproc_spm_auditory.py
+cd /pypreprocess/examples/easy_start && python3 nipype_preproc_spm_auditory.py
