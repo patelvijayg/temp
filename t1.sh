@@ -1,4 +1,4 @@
-docker run -itd --name ubuntu1 mlaccetti/docker-oracle-java8-ubuntu-16.04
+docker run -itd --name ubuntu1 ubuntu:14.04
 wget https://raw.githubusercontent.com/patelvijayg/temp/master/t1.sh
 wget https://raw.githubusercontent.com/patelvijayg/temp/master/t2.sh
 wget https://raw.githubusercontent.com/patelvijayg/temp/master/t3.sh
