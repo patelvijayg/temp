@@ -1,8 +1,8 @@
 #!/bin/bash
 apt-get update && apt-get install vim -y 
 apt install -y sudo bc unzip git wget vim python3 python3-pip build-essential software-properties-common libxml2-dev libxslt1-dev
-pip3 install --upgrade pip
-pip install numpy lxml scipy nose nibabel scikit-learn nipype pandas matplotlib nilearn configobj
+#pip3 install --upgrade pip
+pip3 install numpy lxml scipy nose nibabel scikit-learn nipype pandas matplotlib nilearn configobj
 #echo "deb http://security.ubuntu.com/ubuntu precise-security main" >> /etc/apt/sources.list
 add-apt-repository ppa:openjdk-r/ppa -y && apt-get update && apt-get install -y openjdk-8-jdk && update-alternatives --config java
 git clone https://github.com/neurospin/pypreprocess.git
